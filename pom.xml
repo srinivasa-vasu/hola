@@ -116,6 +116,16 @@
             <enabled>false</enabled>
          </snapshots>
       </pluginRepository>
+      <pluginRepository>
+         <id>jboss-public-repository-group</id>
+         <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </pluginRepository>
    </pluginRepositories>
    <distributionManagement>
       <repository>
