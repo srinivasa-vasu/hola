@@ -44,6 +44,7 @@
 
 		<!-- JBoss dependency versions -->
 		<version.wildfly.swarm>2016.12.0</version.wildfly.swarm>
+		<version.surefire.plugin>2.19.1</version.surefire.plugin>
 
 		<!-- DeltaSpike - Used for configuration -->
 		<deltaspike.version>1.6.1</deltaspike.version>
@@ -93,6 +94,43 @@
 		<fabric8.readinessProbe.initialDelaySeconds>5</fabric8.readinessProbe.initialDelaySeconds>
 		<fabric8.readinessProbe.timeoutSeconds>30</fabric8.readinessProbe.timeoutSeconds>
 	</properties>
+	
+	<repositories>
+		<repository>
+		    <id>jboss-enterprise-maven-repository</id>
+		    <url>https://maven.repository.redhat.com/ga/</url>
+		    <releases>
+			<enabled>true</enabled>
+		    </releases>
+		    <snapshots>
+			<enabled>false</enabled>
+		    </snapshots>
+		</repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-enterprise-maven-repository</id>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    
+    <distributionManagement>
+	<repository>
+		<id>nexus</id>
+		<url>http://nexus:8081/content/repositories/releases</url>
+	</repository>
+	<snapshotRepository>
+		<id>nexus</id>
+		<url>http://nexus:8081/content/repositories/snapshots</url>
+	</snapshotRepository>
+     </distributionManagement>
 
 
 	<dependencyManagement>
@@ -295,6 +333,36 @@
 						</image>
 					</images>
 				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${version.surefire.plugin}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.0.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
+				<executions>
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
