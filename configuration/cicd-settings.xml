@@ -26,13 +26,46 @@
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
-      </repositories>
+        <repository>
+         <id>jboss-enterprise-maven-repository</id>
+         <url>https://maven.repository.redhat.com/ga/</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+      </repository>
+      <repository>
+         <id>jboss-public-repository-group</id>
+         <name>JBoss Public Repository Group</name>
+         <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+         <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+         </releases>
+         <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+         </snapshots>
+      </repository>
+     </repositories>
      <pluginRepositories>
         <pluginRepository>
           <id>central</id>
           <url>http://central</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+        <pluginRepository>
+         <id>jboss-enterprise-maven-repository</id>
+         <url>https://maven.repository.redhat.com/ga/</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
         </pluginRepository>
       </pluginRepositories>
     </profile>
