@@ -67,6 +67,16 @@
             <enabled>false</enabled>
          </snapshots>
         </pluginRepository>
+        <pluginRepository>
+         <id>jboss-public-repository-group</id>
+         <url>http://jboss-public-repository-group</url>
+         <releases>
+            <enabled>true</enabled>
+         </releases>
+         <snapshots>
+            <enabled>false</enabled>
+         </snapshots>
+        </pluginRepository>
       </pluginRepositories>
     </profile>
   </profiles>
