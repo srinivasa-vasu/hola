@@ -26,29 +26,6 @@
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
-        <repository>
-         <id>redhat-ga</id>
-         <url>http://redhat-ga</url>
-         <releases>
-            <enabled>true</enabled>
-         </releases>
-         <snapshots>
-            <enabled>false</enabled>
-         </snapshots>
-      </repository>
-      <repository>
-         <id>jboss-public-repository-group</id>
-         <name>JBoss Public Repository Group</name>
-         <url>http://jboss-public-repository-group</url>
-         <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-         </releases>
-         <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>daily</updatePolicy>
-         </snapshots>
-      </repository>
      </repositories>
      <pluginRepositories>
         <pluginRepository>
@@ -56,26 +33,6 @@
           <url>http://central</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
-        </pluginRepository>
-        <pluginRepository>
-         <id>jboss-enterprise-maven-repository</id>
-         <url>http://redhat-ga</url>
-         <releases>
-            <enabled>true</enabled>
-         </releases>
-         <snapshots>
-            <enabled>false</enabled>
-         </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-         <id>jboss-public-repository-group</id>
-         <url>http://jboss-public-repository-group</url>
-         <releases>
-            <enabled>true</enabled>
-         </releases>
-         <snapshots>
-            <enabled>false</enabled>
-         </snapshots>
         </pluginRepository>
       </pluginRepositories>
     </profile>
